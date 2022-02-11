@@ -405,3 +405,9 @@ body {
     opacity: 1;
   }
 }
+
+@media (max-width:768px) {
+  .video {
+  width: 95%;
+  }
+}
