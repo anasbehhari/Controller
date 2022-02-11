@@ -6,13 +6,13 @@ const MachineKeys = document.querySelectorAll(".Machine-contoller .key");
 CameraKeys.forEach((key) => {
   key.onclick = () => {
     if (key.classList.contains("Left")) {
-      console.log("left camera");
+      alert("left camera");
     } else if (key.classList.contains("Right")) {
-      console.log("right camera");
+      alert("right camera");
     } else if (key.classList.contains("Top")) {
-      console.log("top camera");
+      alert("top camera");
     } else {
-      console.log("bottom camera");
+      alert("bottom camera");
     }
   };
 });
@@ -20,13 +20,13 @@ CameraKeys.forEach((key) => {
 MachineKeys.forEach((key) => {
     key.onclick = () => {
       if (key.classList.contains("left")) {
-        console.log("left machine");
+        alert("left machine");
       } else if (key.classList.contains("right")) {
-        console.log("right machine");
+        alert("right machine");
       } else if (key.classList.contains("top")) {
-        console.log("top machine");
+        alert("top machine");
       } else {
-        console.log("bottom machine");
+        alert("bottom machine");
       }
     };
   });
