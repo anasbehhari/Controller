@@ -1,22 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
   margin: auto;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #fefefe;
   overflow: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+.video {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin-top: 50px;
+  border: 10px solid #292929;
+}
+.video video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 20px);
+  object-fit: cover;
+  z-index: -1;
+}
+.video .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #292929;
+}
+.video .live {
+  position: absolute;
+  background-color: #292929;
+  width: fit-content;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  gap: 5px;
+  border-radius: 3px;
+  margin: 8px;
+  font-size: 13px;
+ 
+}
+.video .live .dot {
+  background-color: #FE0100;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: live 1.3s normal infinite;
+}
+.video .bottom .center {
+  position: absolute;
+  border-radius: 50%;
+  top: 77%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.video .bottom .center svg {
+  width: 40px;
+  fill: white;
+}
+.video .bottom .lines {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  top: 60%;
+  transform: translate(0px,-50%);
+  gap: 3px;
+}
+.video .bottom .stream {
+  position: absolute;
+  right: 0;
+  top: 80%;
+  transform: translate(0px,-50%);
+}
+.video .bottom .stream svg {
+  fill: #fff;
+  width: 22px;
+}
+.video .bottom .lines .dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #1617AF;
+}
+.video .bottom .lines .dot:first-of-type {
+  background-color: #A8181B;
 }
 
+.video .bottom .lines .dot:last-of-type {
+  background-color: #2D8C3D ;
+}
 .controller {
-  margin-top: 100px;
   height: 200px;
   width: 400px;
   background-color: #e6e6e6;
   position: relative;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
 }
-
+.controller-section {
+  transform: translateY(-60px) scale(.7);
+  
+}
 .Camera-contoller {
   height: 250px;
   width: 250px;
@@ -41,55 +135,55 @@ body {
   box-shadow: 15px 8px 15px rgba(0, 0, 0, 0.2);
 }
 .Machine-contoller .direction {
-   width: 60%;
-   height: 60%;
-    position: relative;
+  width: 60%;
+  height: 60%;
+  position: relative;
 }
 .Machine-contoller .direction div {
-    border: 5px solid #333 ;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    border-radius:50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: 5px solid #333;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Machine-contoller .direction div img {
-    width: 70%;
-    height: 70%;
+  width: 70%;
+  height: 70%;
 }
-.Machine-contoller .direction div.right img { 
-    transform: translateX(1px);
+.Machine-contoller .direction div.right img {
+  transform: translateX(1px);
 }
-.Machine-contoller .direction div.left img { 
-    transform: translateX(-2px);
+.Machine-contoller .direction div.left img {
+  transform: translateX(-2px);
 }
-.Machine-contoller .direction div.bottom img { 
-    transform: translateY(1px);
+.Machine-contoller .direction div.bottom img {
+  transform: translateY(1px);
 }
-.Machine-contoller .direction div.top img { 
-    transform: translateY(-1px);
+.Machine-contoller .direction div.top img {
+  transform: translateY(-1px);
 }
 .Machine-contoller .direction .right {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 .Machine-contoller .direction .left {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 .Machine-contoller .direction .top {
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .Machine-contoller .direction .bottom {
-    bottom: 0%;
-    left: 50%;
-    transform: translateX(-50%);
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .circle {
@@ -122,10 +216,10 @@ body {
   margin-left: 5px;
 }
 .key {
-  transition: .3s background;
+  transition: 0.3s background;
   cursor: pointer;
 }
- .key:active {
+.key:active {
   background-color: #555;
 }
 .key:focus {
@@ -139,9 +233,7 @@ body {
   position: absolute;
   border-radius: 15%;
   margin-top: -30px;
-  
 }
-
 
 .Bottom {
   background-color: #333333;
@@ -150,8 +242,6 @@ body {
   position: absolute;
   border-radius: 15%;
   margin-top: 30px;
-  
-  
 }
 
 .Left {
@@ -161,8 +251,6 @@ body {
   position: absolute;
   border-radius: 15%;
   margin-left: -30px;
-  
-
 }
 
 .Right {
@@ -172,11 +260,9 @@ body {
   position: absolute;
   border-radius: 15%;
   margin-left: 30px;
-  
-
 }
 .active {
-  animation: active .3s ;
+  animation: active 0.3s;
 }
 .centerBlue {
   position: absolute;
@@ -308,15 +394,13 @@ body {
 .cable {
   background-color: black;
   width: 10px;
-  height: 150px;
-  position: absolute;
-  margin-left: 49.7%;
-  margin-top: -100px;
+  height: 200px;
+  position: relative;
   box-shadow: 7px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes active {
+@keyframes live {
   100% {
-    background-color: #555;
+    opacity: 1;
   }
 }
